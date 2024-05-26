@@ -215,12 +215,12 @@
 
 // console.log(word2)
 
-// const letters3 = ['a', 'b','c']
-// let words = ''
+const letters3 = ['a', 'b','c']
+let words = ''
 
-// for(const str of letters3) {
-//     words += str
-// }
+for(const str of letters3) {
+    words += str
+}
 
-// console.log(words)
+console.log(words)
 
