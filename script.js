@@ -215,12 +215,169 @@
 
 // console.log(word2)
 
-const letters3 = ['a', 'b','c']
-let words = ''
+// const letters3 = ['a', 'b','c']
+// let words = ''
 
-for(const str of letters3) {
-    words += str
+// for(const str of letters3) {
+//     words += str
+// }
+
+// console.log(words)
+
+async function wakeUp(oclock) {
+    return new Promise((resolve, reject) => {
+
+        if(oclock === 8.08) {
+            return reject('не встав')
+        }
+
+        setTimeout(() => {
+            resolve('встав')
+        }, 2000);
+    })
 }
 
-console.log(words)
+async function breakfast() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('поснідав')
+        }, 5000);
+    })
+}
 
+async function dress() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('одівся')
+        }, 2000);
+    })
+}
+
+async function goToBus(bus) {
+    return new Promise((resolve, reject) => {
+
+        if(bus === 9.00) {
+            reject('ти запізнився на автобус вертайся додому')
+        }
+
+        setTimeout(() => {
+            resolve('пішов на автобус')
+        }, 4000);
+    })
+}
+
+async function gotOnTheBus(bus) {
+    return new Promise((resolve, reject) => {
+
+        if(bus === 'full') {
+            reject('автобус був заповненний')
+        }
+
+        setTimeout(() => {
+            resolve('сів на автобус')
+        }, 1000);
+    })
+}
+
+async function gotTheBusStop() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('доїхав до своєї зупинки')
+        }, 5000);
+    })
+}
+
+async function goToOffice() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('дойшов до офісу')
+        }, 3000);
+    })
+}
+
+async function start() {
+    try{
+    const getUp = await wakeUp()
+    console.log('Artur', getUp)
+
+    const aet = await breakfast()
+    console.log(aet)
+
+    const myDress = await dress()
+    console.log(myDress)
+
+    const mygoToBus = await goToBus()
+    console.log(mygoToBus)
+
+    const mygotOnTheBus = await gotOnTheBus()
+    console.log(mygotOnTheBus)
+
+    const mygotTheBusStop = await gotTheBusStop()
+    console.log(mygotTheBusStop)
+
+    const mygoToOffice = await goToOffice()
+    console.log(mygoToOffice)
+    } catch (e) {
+        console.log(e, 'ти не поїхав на офіс')
+    }
+}
+
+start()
+
+// wakeUp()
+//     .then((resalut) => {
+//         console.log('Artur', resalut)
+//         return breakfast()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+
+//         return dress()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+
+//         return goToBus()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+
+//         return gotOnTheBus()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+
+//         return gotTheBusStop()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+
+//         return goToOffice()
+//     })
+//     .then((resalut) => {
+//         console.log(resalut)
+//     })
+//     .catch((reson) => {
+//         console.log('не поїхав бо', reson)
+//     })
+//     .finally(() => {
+//         console.log('over')
+//     })
+
+function wakeUp(oclock, callback) {
+        if(oclock >= 8.08) {
+            callback(null, 'не встав')
+        } 
+
+        setTimeout(() => {
+            callback('встав')
+        }, 2000);
+}
+
+wakeUp(8.08, (err, data) => {
+    if(err) {
+        console.error('err', err)
+    } else {
+        console.log(data)
+    }
+})

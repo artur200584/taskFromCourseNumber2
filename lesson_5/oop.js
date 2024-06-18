@@ -156,3 +156,39 @@ class Pritz {
 const artur = new Pritz('Julia', 18, 35)
 console.log(artur)
 artur.findCinderella()
+
+class Stack {
+    constructor() {
+        this.item = []
+        console.log(this.item)
+    }
+    push(element) {
+        this.item.push(element)
+    }
+
+    pop() {
+        if(this.item.length == 0) {
+            return console.log('undefinde')
+        }
+        return this.item.pop()
+    }
+
+    peek() {
+        return this.item[this.item.length - 1]
+    }
+
+    isEmpty() {
+        return this.item.length == 0
+    }
+
+    printStack() {
+        let str = ''
+        for(let i = 0; i < this.item.length; i++) {
+            srt += this.item[i] + " "
+        }
+        return str
+    }
+}
+
+let stack = new Stack();
+stack.isEmpty()
