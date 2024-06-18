@@ -203,3 +203,59 @@
 // }
 
 // start()
+
+
+// function isertionSort(arr) {
+//     for(let i = 1; arr.length; i++) {
+//         const resalut = arr[i]
+//         let j
+
+//         for(j = i - 1; j >= 0 && arr[j] > resalut; j--) {
+//             arr[j + 1] = arr[j]
+//         }
+//         arr[j + 1] = resalut
+//     }
+//     return arr
+// }
+
+// function isertionSort(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         const current = arr[i]
+//         let j = i
+
+//         while (j > 0 && arr[j - 1] > current) {
+//             arr[j] = arr[j - 1]
+//             j--
+//         }
+//        arr[j] = current
+//     }
+//     return arr
+// }
+
+
+
+// let arr = []
+
+// for(let i = 0; i < 10; i++) {
+//     arr.push(Math.floor(Math.random() * 10))
+// }
+
+// function shellSort(arr) {
+//     let n = arr.length
+//     for(let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
+//         for(let i = gap; i < n; i++) {
+//             let tmp = i
+//             let j = i
+
+//             while(j >= gap && arr[j - gap] > tmp) {
+//                 arr[j] = arr[j - gap]
+//                 j -= gap
+//             }
+//             arr[j] = tmp
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(shellSort(arr))
+
