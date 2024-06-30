@@ -86,3 +86,29 @@
 // }
 
 // console.log(strNum(arr))
+
+// const arr = [1, 2, 3, 4, 5, 2, 4, 1, 3];
+
+// function find(arr) {
+//     let resalut = {}
+
+//     for(let i = 0; i < arr.length; i++) {
+//         let count = arr[i]
+
+//         if(resalut[count] === undefined) {
+//             resalut[count] = 1
+//         } else {
+//             resalut[count]++
+//         }
+//     }
+
+//     for(let i = 0; i < arr.length; i++) {
+//         let count = arr[i]
+
+//         if(resalut[count] === 1) {
+//             return count
+//         }
+//     }
+// }
+
+// console.log(find(arr))
